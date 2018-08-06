@@ -22,15 +22,15 @@ let targetArr = [1,2,3,4,5]
 let currentArr = []
 
 const copyTargetArr = (arr) => {
-	let tmp = arr.slice()  //浅拷贝targetArr
-	let getFrist = setInterval(()=>{
-	    if (tmp[0]) {
-	      currentArr.push(tmp.shift())
-	      //删除tmp第一个元素，并返回该元素的值
-	    }else{
-	      clearInterval(getFrist);
-	    }
-	 },1000);
+  let tmp = arr.slice()  //浅拷贝targetArr
+  let getFrist = setInterval(()=>{
+    if (tmp[0]) {
+      currentArr.push(tmp.shift())
+      //删除tmp第一个元素，并返回该元素的值
+    }else{
+      clearInterval(getFrist);
+    }
+  },1000);
 }
 
 copyTargetArr(targetArr)
