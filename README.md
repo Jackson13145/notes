@@ -10,8 +10,8 @@ A：使用after伪元素来解决该布局bug
 
 ```
 父亲元素:after{
-	content:'',
-	width:子元素宽度，
+  content:'',
+  width:子元素宽度，
 }
 ```
 ### JS
