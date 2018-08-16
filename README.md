@@ -35,3 +35,21 @@ const copyTargetArr = (arr) => {
 
 copyTargetArr(targetArr)
 ```
+2、数组中随机选取某项元素
+
+(1)随机选取1项
+
+```
+const randomSelectOne = (arr) => {
+  return  arr[Math.floor(Math.random() * arr.length)]
+}
+```
+(2)随机选取N项
+
+```
+const randomSelect = (arr, num) => {
+  return arr.sort(() =>
+    0.5 - Math.random()
+  ).slice(0, num)
+}
+```
