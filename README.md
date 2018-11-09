@@ -53,3 +53,68 @@ const randomSelect = (arr, num) => {
   ).slice(0, num)
 }
 ```
+3、数组去重
+
+(1)基本数组
+
+[1]利用ES6的Array.from()/扩展运算符 以及 Set
+
+```
+function unique(arr){
+  return Array.from(new Set(arr));
+}
+```
+
+```
+function unique(arr){
+  return [...new Set(arr)];
+}
+```
+[2]利用indexOf判断是否存在于新数组中
+
+```
+var newArr = [];
+for(var i in arr) {
+ if(newArr.indexOf(arr[i]) === -1) {
+ 	newArr.push(arr[i])
+ }
+}
+ return newArr;
+}
+
+```
+(2)对象数组
+
+[1]利用对象的键名不能重复的特点
+
+```
+unique(arr){
+  let unique = {};
+   arr.forEach((item) => {
+     unique[JSON.stringify(item)]=item;//键名不会重复
+   })
+   arr = Object.keys(unique).map(function(u){ 
+
+     return JSON.parse(u);
+   })
+   return arr;
+}
+```
+[2]利用对象其中一个键名不能重复的特点
+
+```
+funticon unique(arr){
+  let result = {};
+  let finalResult=[];
+  let item
+
+  arr.forEach((item) => {
+    result[JSON.stringify(item.id)]=item;//键名id不会重复
+  })
+  for(item in result){
+    finalResult.push(result[item]);
+  }
+
+  return finalResult;
+}
+```
