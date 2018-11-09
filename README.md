@@ -8,7 +8,7 @@ Q：当最后一行不满三个时，因为是两端布局，所以会出现问�
 
 A：使用after伪元素来解决该布局bug
 
-```
+```css
 父亲元素:after{
   content:'',
   width:子元素宽度，
@@ -17,7 +17,7 @@ A：使用after伪元素来解决该布局bug
 ### JS
 1、每秒copy目标数组中的一个值到新数组中
 
-```
+```js
 let targetArr = [1,2,3,4,5]
 let currentArr = []
 
@@ -39,14 +39,14 @@ copyTargetArr(targetArr)
 
 (1)随机选取1项
 
-```
+```js
 const randomSelectOne = (arr) => {
   return  arr[Math.floor(Math.random() * arr.length)]
 }
 ```
 (2)随机选取N项
 
-```
+```js
 const randomSelect = (arr, num) => {
   return arr.sort(() =>
     0.5 - Math.random()
@@ -59,20 +59,20 @@ const randomSelect = (arr, num) => {
 
 [1]利用ES6的Array.from()/扩展运算符 以及 Set
 
-```
+```js
 function unique(arr){
   return Array.from(new Set(arr));
 }
 ```
 
-```
+```js
 function unique(arr){
   return [...new Set(arr)];
 }
 ```
 [2]利用indexOf判断是否存在于新数组中
 
-```
+```js
 var newArr = [];
 for(var i in arr) {
  if(newArr.indexOf(arr[i]) === -1) {
@@ -87,7 +87,7 @@ for(var i in arr) {
 
 [1]利用对象的键名不能重复的特点
 
-```
+```js
 unique(arr){
   let unique = {};
    arr.forEach((item) => {
@@ -102,7 +102,7 @@ unique(arr){
 ```
 [2]利用对象其中一个键名不能重复的特点
 
-```
+```js
 funticon unique(arr){
   let result = {};
   let finalResult=[];
