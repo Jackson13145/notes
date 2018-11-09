@@ -1,10 +1,19 @@
 # Notes
 
-### CSS
+## 目录
 
-1、flex布局中justify-content: space-between方法的排版问题
+* [CSS](#CSS)
+  * [flex布局排版](#flex布局排版问题)
+* [JS](#JS)
+  * [每秒copy目标数组中的一个值到新数组中](#每秒copy目标数组中的一个值到新数组中)
+  * [数组随机选取](#数组中随机选取某项元素)
+  * [数组去重](#数组去重)
+  
+## CSS
 
-Q：当最后一行不满三个时，因为是两端布局，所以会出现问题。
+### flex布局排版问题
+
+Q：justify-content:space-between方法，当最后一行不满三个时，因为是两端布局，所以会出现问题。
 
 A：使用after伪元素来解决该布局bug
 
@@ -14,8 +23,8 @@ A：使用after伪元素来解决该布局bug
   width:子元素宽度，
 }
 ```
-### JS
-1、每秒copy目标数组中的一个值到新数组中
+## JS
+### 每秒copy目标数组中的一个值到新数组中
 
 ```js
 let targetArr = [1,2,3,4,5]
@@ -35,7 +44,7 @@ const copyTargetArr = (arr) => {
 
 copyTargetArr(targetArr)
 ```
-2、数组中随机选取某项元素
+### 数组中随机选取某项元素
 
 (1)随机选取1项
 
@@ -53,7 +62,7 @@ const randomSelect = (arr, num) => {
   ).slice(0, num)
 }
 ```
-3、数组去重
+### 数组去重
 
 (1)基本数组
 
