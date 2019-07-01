@@ -8,6 +8,7 @@
   * [每秒copy目标数组中的一个值到新数组中](#每秒copy目标数组中的一个值到新数组中)
   * [数组随机选取](#数组中随机选取某项元素)
   * [数组去重](#数组去重)
+  * [数组重组](#数组重组)
   
 ## CSS
 
@@ -109,7 +110,7 @@ unique(arr){
    return arr;
 }
 ```
-[2]利用对象其中一个键名不能重复的特点
+[2]利用对象其中一个键名不能重复的特点（顺序:前者为尊）
 
 ```js
 funticon unique(arr){
@@ -125,5 +126,46 @@ funticon unique(arr){
   }
 
   return finalResult;
+}
+```
+[3]利用对象其中一个键名不能重复的特点（顺序:后来居上）
+
+```js
+funticon unique(arr){
+  const result = {}
+  const finalResult = []
+  const keys = []
+
+  arr.forEach(item => {
+    result[item.id] = item // 键名id不会重复
+    keys.push(item.id)
+    if (keys.indexOf(item.id) !== keys.lastIndexOf(item.id)) {
+      keys.splice(keys.indexOf(item.id), 1)
+    }
+  })
+
+  keys.forEach(item => {
+    finalResult.push(result[item])
+  })
+
+  return finalResult
+}
+```
+### 数组重组
+
+(1)将数组中key相同的对象组成新的数组
+
+```js
+const formatGiftDetail = (data) => {
+  const newData = {}
+
+  data.forEach(obj => {
+    const array = newData[obj.sameKey] || []
+
+    array.push(obj)
+    newData[obj.sameKey] = array
+  })
+
+  return newData
 }
 ```
